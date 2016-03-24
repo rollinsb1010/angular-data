@@ -27,6 +27,12 @@ myApp.config(['$routeProvider', function($routeProvider) {
           return Authentication.requireAuth();
         }
       }
+    }).when('/checkins/:uId/:mId', {
+      templateUrl: 'views/checkin.html',
+      controller: 'CheckInsController'
+    }).when('/checkins/:uId/:mId/checkinsList', {
+      templateUrl: 'views/checkinslist.html',
+      controller: 'CheckInsController'
     }).otherwise({
       redirectTo: '/login'
     });
